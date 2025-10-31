@@ -1,0 +1,151 @@
+/* Задаем общий стиль для всей страницы */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center; 
+    background-color: #ffffff; 
+    color: #000000; 
+    margin: 0;
+    padding: 20px;
+}
+
+/* Стили для заголовка h1 */
+h1 {
+    color: #9b51d0; 
+}
+
+/* Стили для секций */
+section {
+    background-color: white;
+    margin: 20px auto; /* Отступ сверху/снизу и выравнивание по центру */
+    padding: 20px;
+    border-radius: 10px; /* Закругленные углы */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Легкая тень */
+    max-width: 600px; /* Чтоб не растягивалось на весь экран */
+}
+
+/* Стили для ссылок */
+a {
+    display: inline-block; /* Чтобы ссылке можно было задать отступы */
+    background-color: #9b51d0; /* Зеленый фон */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+a:hover {
+    background-color: #592f78; /* Темнее при наведении */
+}
+/* Стили для кнопки подтверждения */
+.confirm-button {
+    background-color: #9b51d0;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.confirm-button:hover {
+    background-color: #ff5252;
+    transform: scale(1.05);
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: modalAppear 0.3s ease;
+}
+
+@keyframes modalAppear {
+    from {opacity: 0; transform: translateY(-50px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #999;
+}
+
+.close:hover {
+    color: #333;
+}
+
+/* Стили для формы */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input:focus, textarea:focus {
+    border-color: #9b51d0;
+    outline: none;
+}
+
+.submit-btn {
+    background-color: #9b51d0;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #9b51d0;
+}
+
+/* Сообщение об успехе */
+.success-message {
+    display: none;
+    background-color: #ffffff;
+    color: #9b51d0;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 500px;
+    text-align: center;
+}
