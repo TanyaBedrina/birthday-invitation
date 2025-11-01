@@ -1,0 +1,439 @@
+
+@font-face {
+    font-family: 'Exo 2';
+    src: url('./fonts/Exo2-Italic-VariableFont_wght.woff2') format('woff2'),
+         url('./fonts/Exo2-Italic-VariableFont_wght.woff') format('woff');
+    font-weight: 100 900; /* Для переменного шрифта указываем диапазон */
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rajdhani';
+    src: url('./fonts/Rajdhani_Light_Regular.woff2') format('woff2'),
+         url('./fonts/Rajdhani_Light_Regular.woff') format('woff');
+    font-weight: 300; /* Light обычно это 300 */
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rajdhani';
+    src: url('./fonts/Rajdhani_SemiBold_Regular.woff2') format('woff2'),
+         url('./fonts/Rajdhani_SemiBold_Regular.woff') format('woff');
+    font-weight: 600; /* SemiBold обычно это 600 */
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Anton-Regular';
+    src: url('./fonts/Anton-Regular.woff2') format('woff2'),
+         url('./fonts/Anton-Regular.woff') format('woff');
+    font-weight: 600; /* SemiBold обычно это 600 */
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center; 
+    background-color: #ffffff; 
+    color: #000000; 
+    margin: auto;
+    padding: 20px;
+    width: 360px;
+}
+
+/* Стили для заголовка h1 */
+h1 {
+    color: #000000; 
+    font-family: 'Anton-Regular', sans-serif;
+    font-weight: 600; /* Полужирное */
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+img{
+    margin-top: -160px;
+    position: relative;
+    z-index: -1;
+}
+
+/* Стили для секций */
+section {
+    background-color: white;
+    margin: 20px auto; /* Отступ сверху/снизу и выравнивание по центру */
+    border-radius: 10px; /* Закругленные углы */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Легкая тень */
+    max-width: 600px; /* Чтоб не растягивалось на весь экран */
+}
+
+/* Стили для ссылок */
+a {
+    display: inline-block; /* Чтобы ссылке можно было задать отступы */
+    background-color: #9b51d0; /* Зеленый фон */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+a:hover {
+    background-color: #592f78; /* Темнее при наведении */
+}
+/* Стили для кнопки подтверждения */
+.confirm-button {
+    background-color: #9b51d0;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.confirm-button:hover {
+    background-color: #ff5252;
+    transform: scale(1.05);
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: modalAppear 0.3s ease;
+}
+
+@keyframes modalAppear {
+    from {opacity: 0; transform: translateY(-50px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #999;
+}
+
+.close:hover {
+    color: #333;
+}
+
+/* Стили для формы */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input:focus, textarea:focus {
+    border-color: #9b51d0;
+    outline: none;
+}
+
+.submit-btn {
+    background-color: #9b51d0;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #9b51d0;
+}
+
+/* Сообщение об успехе */
+.success-message {
+    display: none;
+    background-color: #ffffff;
+    color: #9b51d0;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 500px;
+    text-align: center;
+}
+
+.central_text{
+    text-align: justify;
+}
+
+/* Добавьте эти стили в конец вашего CSS файла */
+
+/* Базовые улучшения */
+body {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Заголовки */
+h1 {
+    color: #000000;
+    font-family: 'Anton-Regular', sans-serif;
+    font-weight: 400; /* Для Anton Regular используйте 400 */
+    font-size: 36px; /* Немного меньше для мобильных */
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #333;
+    margin: 30px 0 15px 0;
+}
+
+/* Контейнер для фото */
+.photo-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto 20px auto;
+}
+
+.main-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Текстовые блоки */
+.central-text {
+    text-align: center;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+.central-text p {
+    margin-bottom: 15px;
+}
+
+.highlight {
+    font-family: 'Exo 2', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    color: #9b51d0;
+    background-color: #f8f5ff;
+    padding: 10px;
+    border-radius: 8px;
+    border-left: 4px solid #9b51d0;
+}
+
+/* Секции */
+.info-section, .program-section {
+    background-color: white;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 3px solid #9b51d0;
+}
+
+/* Список программы */
+.program-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.program-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 300;
+}
+
+.program-list li:last-child {
+    border-bottom: none;
+}
+
+.program-list strong {
+    font-weight: 600;
+    color: #9b51d0;
+}
+
+/* Карта */
+.map-container {
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Футер */
+.main-footer {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+.main-footer h2 {
+    color: #9b51d0;
+    margin-bottom: 10px;
+}
+
+/* Кнопки - улучшенные стили */
+.confirm-button {
+    background-color: #9b51d0;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.confirm-button:hover {
+    background-color: #592f78;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(155, 81, 208, 0.3);
+}
+
+/* Модальное окно - улучшения */
+.modal-content h2 {
+    color: #9b51d0;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 400px) {
+    body {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 32px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+    
+    .modal-content {
+        margin: 10% auto;
+        padding: 20px;
+    }
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+section {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Утилитарные классы */
+.text-center {
+    text-align: center;
+}
+
+.text-accent {
+    font-family: 'Exo 2', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    color: #9b51d0;
+}
+
+/* Убираем старый класс */
+.central_text {
+    display: none; /* Скрываем старый блок */
+}
+
+.big{
+    font-weight: bold;
+}
+
+/* Специальный класс только для цифр */
+.digits-only {
+    font-family: 'Anton-Regular', sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.english-text {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    color: #9b51d0;
+    font-size: 18px;
+}
+
+.confirmation-section{
+    box-shadow:none;
+}

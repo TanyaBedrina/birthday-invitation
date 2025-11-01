@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Приглашение на день рождения Артёма</title>
+</head>
+<body>
+    <header class="main-header">
+        <h1 class="main-title">Артёму — 10! <br>Твой вызов принят?</h1>
+        <div class="photo-container">
+            <img src="photo.jpg" alt="Футбольная тематика - день рождения Артёма" class="main-photo">
+        </div>
+        <div class="central-text">
+            <p>Пора собрать команду не просто гостей, а партнёров по испытаниям.</p>
+            <p>Мы превратим день рождения в череду челленджей, где важна и твоя скорость, и твоя смекалка.</p>
+            <p class="highlight">Мы очень ждём именно тебя — без тебя команда будет не полной.</p>
+            <p><strong class="big">Что надеть:</strong> Удобная одежда, в которой ты готов на подвиги.</p>
+            <p><strong class="big">Что ждать:</strong> Серьёзные испытания, море драйва и настоящий командный дух.</p>
+        </div>
+        
+        <section class="confirmation-section">
+            <button id="confirm-btn" class="confirm-button">Принимаю вызов!</button>
+        </section>
+        
+        <!-- Модальное окно с формой -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Подтверждение участия</h2>
+                <form id="invitation-form">
+
+                    <div class="form-group">
+                        <label for="child-name">Имя ребенка:</label>
+                        <input type="text" id="child-name" name="child-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Пожелания или комментарии:</label>
+                        <textarea id="message" name="message" rows="3" placeholder="Аллергии, что учесть, что не ест/не пьет..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Отправить</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Сообщение об успешной отправке -->
+        <div id="success-message" class="success-message">
+            <h3>Спасибо! Мы ждём вас на празднике! 🎉</h3>
+        </div>
+    </header>
+
+    <section class="info-section">
+        <h2>Информация для родителей:</h2>
+        <div class="info-grid">
+            <div class="info-item">
+                <strong>Дата:</strong> <span class="digits-only">15</span> ноября <span class="digits-only">2025</span> года
+            </div>
+            <div class="info-item">
+                <strong>Время:</strong> <span class="digits-only">16:00</span>
+            </div>
+            <div class="info-item">
+                <strong>Место: </strong>Лофт <span class="english-text">Rocket hall</span><br>Обнинск, ул. Королева, <span class="digits-only">д.6</span> 
+            </div>
+        </div>
+        <div class="map-container">
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Af7505f5e87fa4ed1414030a6609dbac8e0b77466ff9497f442cf1d47cbc96c7d&amp;source=constructor" 
+                    width="100%" height="400" frameborder="0" title="Карта проезда до лофта Rocket hall"></iframe>
+        </div>
+    </section>
+
+    <section class="program-section">
+        <h2>Программа праздника:</h2>
+        <ul class="program-list">
+            <li><strong>16:00</strong> - Сбор гостей, фуршет</li>
+            <li><strong>16:30</strong> - Испытания в стиле шоу "Неигры"</li>
+            <li><strong>19:30</strong> - Задувание свечей и торт!</li>
+        </ul>
+    </section>
+
+    <footer class="main-footer">
+        <h2>Очень ждём!</h2>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
